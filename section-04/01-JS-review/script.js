@@ -148,6 +148,7 @@ const books = getBooks();
 
 // MAP METHOD:
 const titles = books.map((book) => book.title);
+console.log('This the book titles found by using map method!:');
 console.log(titles);
 
 // To much code
@@ -169,34 +170,68 @@ const essentialData = books.map((book) => ({
   author: book.author,
   reviewsCount: getTotalReviewCount(book),
 }));
-console.log(essentialData(book[2]));
+console.log('Essential data of the books:');
+console.log(essentialData);
 
 // Example of map method
 const x = [1, 2, 3, 4, 5].map((el) => el * 2);
+console.log('Example of how to multiply elements in a array with map method:');
 console.log(x);
 
 // FILTER METHOD
 const longBooks = books
   .filter((book) => book.pages > 500)
   .filter((book) => book.hasMovieAdaptation);
+console.log(
+  'How to find all the books with more than 500 pages in a array of books using filter method:'
+);
 console.log(longBooks);
 
 const adventureBooks = books
   .filter((books) => books.genres.includes('adventure'))
   .map((book) => book.title);
+console.log(
+  'How to find tge adventure books in an array using filter and map methods:'
+);
 console.log(adventureBooks);
 
 // REDUCE METHOD
 const pagesAllBooks = books.reduce((sum, book) => sum + book.pages, 0);
+console.log('Using reduce method to sum up all book pages:');
 console.log(pagesAllBooks);
 
 // SORT METHOD
 const arr = [3, 6, 1, 7, 5];
 const sorted = arr.slice().sort((a, b) => a - b);
+console.log('How to use sort method to sort elements in an array');
 console.log(sorted);
 console.log(arr);
 
 const sortedByPages = books.slice().sort((a, b) => b.pages - a.pages);
+
+// IMMUTABLE METHOD
+// 1) ADD A BOOK OBJECT TO ARRAY
+const newBook = {
+  id: 6,
+  title: 'Harry Potter and the Chamber of Secrets',
+  author: 'J. K. Rowling',
+};
+
+const booksAfterAdd = [...books, newBook];
+console.log('Adding a book using the immutable method');
+console.log(booksAfterAdd);
+
+// 2) DELETE A BOOK OBJECT FROM AN ARRAY
+const booksAfterDelete = booksAfterAdd.filter((book) => book.id !== 3);
+console.log('Deleting a book using the immutable method');
+console.log(booksAfterDelete);
+
+// 3) UPDATE A BOOK OBJECT IN AN ARRAY
+const booksAfterUpdate = booksAfterDelete.map((book) =>
+  book.id === 1 ? { ...book, pages: 1210 } : book
+);
+console.log('Updating a book using the immutable method');
+console.log(booksAfterUpdate);
 
 /*
 THEORETICAL EXAMPLES!!!
