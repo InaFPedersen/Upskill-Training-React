@@ -10,6 +10,9 @@ function App() {
     <div className="container">
       <Header />
       <Menu />
+      <aside>
+        <button className="btn">Order</button>
+      </aside>
       <Footer />
     </div>
   );
