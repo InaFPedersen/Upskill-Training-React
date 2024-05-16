@@ -43,11 +43,11 @@ const Counter = () => {
 
       {days >= 0 ? (
         <h1>
-          {days} days from today is {date.toDateString()}
+          {days} days from today, is {date.toDateString()}
         </h1>
       ) : (
         <h1>
-          {days} days from today was {date.toDateString()}
+          {days} days ago, was {date.toDateString()}
         </h1>
       )}
     </div>
