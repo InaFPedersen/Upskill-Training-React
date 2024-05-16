@@ -27,7 +27,11 @@ const Footer = () => {
           </p>
         </div>
         <h3 className="footer-message">
-          {isOpen ? <>We're currently open!</> : <>Sorry, we're closed!</>}
+          {isOpen ? (
+            <>We're currently open!</>
+          ) : (
+            <>Sorry, we're closed! We open at {openHour}PM!</>
+          )}
         </h3>
       </footer>
     </div>
