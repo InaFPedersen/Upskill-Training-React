@@ -14,7 +14,7 @@ const Footer = () => {
   return (
     <div>
       <footer className="footer">
-        <h3>Company information</h3>
+        <h3 className="footer-header">Company information</h3>
         <div className="opening-hours">
           <p>
             Opening hours is <strong>{openHour} PM</strong>
@@ -25,10 +25,10 @@ const Footer = () => {
           <p>
             The time now is: <strong>{new Date().toLocaleTimeString()}</strong>
           </p>
-          <h3>
-            {isOpen ? <>We're currently open!</> : <>Sorry, we're closed!</>}
-          </h3>
         </div>
+        <h3 className="footer-message">
+          {isOpen ? <>We're currently open!</> : <>Sorry, we're closed!</>}
+        </h3>
       </footer>
     </div>
   );
