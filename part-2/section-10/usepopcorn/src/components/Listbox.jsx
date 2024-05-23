@@ -1,12 +1,17 @@
-import List from './List';
+import { useState } from 'react';
 
-const Listbox = ({ isOpen, onIsOpen, movies }) => {
+const Listbox = ({ children }) => {
+  const [isOpen1, setIsOpen1] = useState(true);
+
   return (
     <div className="box">
-      <button className="btn-toggle" onClick={() => onIsOpen((open) => !open)}>
-        {isOpen ? '–' : '+'}
+      <button
+        className="btn-toggle"
+        onClick={() => setIsOpen1((open) => !open)}
+      >
+        {isOpen1 ? '–' : '+'}
       </button>
-      {isOpen && <List movies={movies} />}
+      {isOpen1 && children}
     </div>
   );
 };

@@ -1,18 +1,17 @@
-import Summary from './Summary';
-import WatchedMovieList from './WatchedMovieList';
+import { useState } from 'react';
 
-const WatchedBox = ({ average, watched, isOpen, onIsOpen }) => {
+const WatchedBox = ({ children }) => {
+  const [isOpen2, setIsOpen2] = useState(true);
+
   return (
     <div className="box">
-      <button className="btn-toggle" onClick={() => onIsOpen((open) => !open)}>
-        {isOpen ? '–' : '+'}
+      <button
+        className="btn-toggle"
+        onClick={() => setIsOpen2((open) => !open)}
+      >
+        {isOpen2 ? '–' : '+'}
       </button>
-      {isOpen && (
-        <>
-          <Summary average={average} watched={watched} />
-          <WatchedMovieList watched={watched} />
-        </>
-      )}
+      {isOpen2 && children}
     </div>
   );
 };
