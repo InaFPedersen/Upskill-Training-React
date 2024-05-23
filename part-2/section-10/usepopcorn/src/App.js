@@ -31,6 +31,18 @@ export default function App() {
           <Summary watched={watched} />
           <WatchedMovieList watched={watched} />
         </Box>
+
+        {/* You can do like this too: */}
+        {/* <Box element={<MovieList movies={movies} />} />
+        <Box
+          element={
+            <>
+              <Summary watched={watched} />
+              <WatchedMovieList watched={watched} />
+            </>
+          }
+        /> */}
+        {/* You have to change child with element in the box component to make it work */}
       </Main>
     </>
   );
