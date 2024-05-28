@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import { tempMovieData } from './data/tempMovieData';
+import { tempWatchedData } from './data/tempWatchedData';
+import Navbar from './components/Navbar';
+import Main from './components/Main';
+import NumberResult from './components/NumberResult';
+import Logo from './components/Logo';
+import Search from './components/Search';
+import Box from './components/Box';
+import List from './components/List';
+import Summary from './components/Summary';
+import WatchedMovieList from './components/WatchedMovieList';
 
-function App() {
+export default function App() {
+  const [movies, setMovies] = useState(tempMovieData);
+  const [watched, setWatched] = useState(tempWatchedData);
+  const [query, setQuery] = useState('');
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar>
+        <Logo />
+        <Search query={query} onQuery={setQuery} />
+        <NumberResult movies={movies} />
+      </Navbar>
+      <Main>
+        <Box>
+          <List movies={movies} />
+        </Box>
+        <Box>
+          <Summary watched={watched} />
+          <WatchedMovieList watched={watched} />
+        </Box>
+      </Main>
+    </>
   );
 }
-
-export default App;
