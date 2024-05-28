@@ -18,43 +18,52 @@ export default function App() {
   const [watched, setWatched] = useState(tempWatchedData);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
-  // const [query, setQuery] = useState('');
-  const query = 'Interstellar';
+  const [query, setQuery] = useState('');
 
   const REACT_APP_API_KEY = 'c3066ad6';
 
-  useEffect(function () {
-    async function fetchMovies() {
-      try {
-        setIsLoading(true);
-        const res = await fetch(
-          `http://www.omdbapi.com/?apikey=${REACT_APP_API_KEY}&s=${query}`
-        );
+  useEffect(
+    function () {
+      async function fetchMovies() {
+        try {
+          setIsLoading(true);
+          setError('');
 
-        if (!res.ok)
-          throw new Error('Something went wrong with fetching movies');
+          const res = await fetch(
+            `http://www.omdbapi.com/?apikey=${REACT_APP_API_KEY}&s=${query}`
+          );
 
-        const data = await res.json();
+          if (!res.ok)
+            throw new Error('Something went wrong with fetching movies');
 
-        if (data.Response === 'False') throw new Error('Movie not found');
+          const data = await res.json();
 
-        setMovies(data.Search);
-      } catch (err) {
-        console.log(err.message);
-        setError(err.message);
-      } finally {
-        setIsLoading(false);
+          if (data.Response === 'False') throw new Error('Movie not found');
+
+          setMovies(data.Search);
+        } catch (err) {
+          setError(err.message);
+        } finally {
+          setIsLoading(false);
+        }
       }
-    }
 
-    fetchMovies();
-  }, []);
+      if (!query.length) {
+        setMovies([]);
+        setError('');
+        return;
+      }
+
+      fetchMovies();
+    },
+    [query]
+  );
 
   return (
     <>
       <Navbar>
         <Logo />
-        <Search /*query={query} onQuery={setQuery} */ />
+        <Search query={query} onQuery={setQuery} />
         <NumberResult movies={movies} />
       </Navbar>
       <Main>
