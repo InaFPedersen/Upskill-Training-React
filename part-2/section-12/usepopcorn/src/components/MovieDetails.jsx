@@ -5,7 +5,7 @@ import Loader from './Loader';
 
 const MovieDetails = ({ selectedId, onCloseMovie }) => {
   const [movie, setMovie] = useState({});
-  const [isLoading, setIsLoading] = useEffect(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const {
     Title: title,
@@ -52,6 +52,7 @@ const MovieDetails = ({ selectedId, onCloseMovie }) => {
             <img src={poster} alt={`Poster of ${movie} movie`} />
             <div className="details-overview">
               <h2>{title}</h2>
+
               <p>
                 {released} &bull; {runtime}
               </p>
