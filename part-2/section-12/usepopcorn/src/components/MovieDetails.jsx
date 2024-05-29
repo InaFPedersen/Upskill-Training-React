@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { REACT_APP_API_KEY } from '../data/key';
 import StarRating from './StarRating';
 import Loader from './Loader';
 
@@ -33,7 +32,7 @@ const MovieDetails = ({ selectedId, onCloseMovie, onAddWatched, watched }) => {
         setIsLoading(true);
 
         const res = await fetch(
-          `http://www.omdbapi.com/?apikey=${REACT_APP_API_KEY}&i=${selectedId}`
+          `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&i=${selectedId}`
         );
         const data = await res.json();
         setMovie(data);

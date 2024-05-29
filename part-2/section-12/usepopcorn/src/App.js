@@ -11,7 +11,6 @@ import WatchedMovieList from './components/WatchedMovieList';
 import Loader from './components/Loader';
 import ErrorMessage from './components/ErrorMessage';
 import MovieDetails from './components/MovieDetails';
-import { REACT_APP_API_KEY } from './data/key';
 
 export default function App() {
   const [movies, setMovies] = useState([]);
@@ -47,7 +46,7 @@ export default function App() {
           setError('');
 
           const res = await fetch(
-            `http://www.omdbapi.com/?apikey=${REACT_APP_API_KEY}&s=${query}`,
+            `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&s=${query}`,
             { signal: controller.signal }
           );
 
