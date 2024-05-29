@@ -1,6 +1,4 @@
 import { useEffect, useState } from 'react';
-import { tempMovieData } from './data/tempMovieData';
-import { tempWatchedData } from './data/tempWatchedData';
 import Navbar from './components/Navbar';
 import Main from './components/Main';
 import NumberResult from './components/NumberResult';
