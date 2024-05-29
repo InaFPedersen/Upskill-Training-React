@@ -1,5 +1,4 @@
 const Skill = ({ skill, color, level }) => {
-  console.log();
   return (
     <div
       className="skill"
