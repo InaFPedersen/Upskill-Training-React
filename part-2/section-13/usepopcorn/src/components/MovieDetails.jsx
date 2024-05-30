@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import StarRating from './StarRating';
 import Loader from './Loader';
 
@@ -6,6 +6,15 @@ const MovieDetails = ({ selectedId, onCloseMovie, onAddWatched, watched }) => {
   const [movie, setMovie] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [userRating, setUserRating] = useState('');
+
+  const countRef = useRef(0);
+
+  useEffect(
+    function () {
+      if (userRating) countRef.current++;
+    },
+    [userRating]
+  );
 
   const isWatched = watched.map((movie) => movie.imdbID).includes(selectedId);
 
@@ -53,6 +62,7 @@ const MovieDetails = ({ selectedId, onCloseMovie, onAddWatched, watched }) => {
       imdbRating: Number(imdbRating),
       runtime: Number(runtime.split(' ').at(0)),
       userRating,
+      countRatingDecisions: countRef.current,
     };
     onAddWatched(newWatchedMovie);
     onCloseMovie();
@@ -132,14 +142,15 @@ const MovieDetails = ({ selectedId, onCloseMovie, onAddWatched, watched }) => {
                 </>
               ) : (
                 <p>
-                  You rated this movie with <span>{watchedUserRating}⭐</span>
+                  You rated this movie with {watchedUserRating}
+                  <span>⭐</span>
                 </p>
               )}
             </div>
             <p>
               <em>{plot}</em>
             </p>
-            <p>Featuring: {actors}</p>
+            <p>Starring: {actors}</p>
             <p>Directed by: {director}</p>
           </section>
         </>
