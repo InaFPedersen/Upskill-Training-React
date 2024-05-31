@@ -1,5 +1,27 @@
 # Part 2
 
+Intermediate react
+
+## Learning outcome
+
+In part 2, we will learn:
+
+- Thinking in React (Components, Composition and Reusability)
+
+- How React works behind the scenes (rendering)
+
+- Effects and data fetching
+
+- Custom hooks, Refs, and more State
+
+- Class based React
+
+### How
+
+- Lectures with examples
+
+- Challenges
+
 ## Useful resources
 
 - [Writing Resilient Components](https://overreacted.io/writing-resilient-components/?ref=jonas.io)
