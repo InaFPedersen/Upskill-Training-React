@@ -1,0 +1,9 @@
+.nav {
+  background-color: aliceblue;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
