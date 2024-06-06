@@ -13,9 +13,7 @@ import Message from './Message';
 import Spinner from './Spinner';
 import { useCities } from '../contexts/CitiesContext';
 import { useNavigate } from 'react-router-dom';
-//import { flagEmojiToPNG } from './flagEmojiToPng';
 
-// WORKS ONLY ON FIREFOX (shows flag)
 export function convertToEmoji(countryCode) {
   const codePoints = countryCode
     .toUpperCase()
@@ -61,10 +59,7 @@ function Form() {
 
           setCityName(data.city || data.locality || '');
           setCountry(data.countryName);
-          // WORKS ONLY ON FIREFOX (shows flag)
           setEmoji(convertToEmoji(data.countryCode));
-          // SHOULD WORK ON ALL BROWSERS DOES NOT WORK FOR SOME REASON
-          // setEmoji(flagEmojiToPNG(data.countryCode));
         } catch (err) {
           setGeocodingError(err.message);
         } finally {
