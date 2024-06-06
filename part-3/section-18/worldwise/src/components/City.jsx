@@ -34,7 +34,7 @@ function City() {
       <div className={styles.row}>
         <h6>City name</h6>
         <h3>
-          {/* ONLY WORKS ON FIREFOX */}
+          {/* ONLY WORKS ON FIREFOX (shows flag) */}
           <span>{emoji}</span> {cityName}
           {/* WORKS ON ALL BROWSERS  !!BUT IS NOT WORKING FOR SOME REASON*/}
           {/* <span>{flagEmojiToPNG(emoji)}</span> {cityName} */}
