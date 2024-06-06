@@ -1,15 +1,18 @@
+// "https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=0&longitude=0"
+
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
-import styles from './Form.module.css';
 import Button from './Button';
 import BackButton from './BackButton';
+
+import styles from './Form.module.css';
 import { useURLPosition } from '../hooks/useURLPosition';
-import { useCities } from '../contexts/CitiesContext';
-import Spinner from './Spinner';
 import Message from './Message';
+import Spinner from './Spinner';
+import { useCities } from '../contexts/CitiesContext';
+import { useNavigate } from 'react-router-dom';
 
 export function convertToEmoji(countryCode) {
   const codePoints = countryCode
@@ -19,8 +22,7 @@ export function convertToEmoji(countryCode) {
   return String.fromCodePoint(...codePoints);
 }
 
-const FORM_BASE_URL =
-  'https://api.bigdatacloud.net/data/reverse-geocode-client';
+const BASE_URL = 'https://api.bigdatacloud.net/data/reverse-geocode-client';
 
 function Form() {
   const [lat, lng] = useURLPosition();
@@ -45,7 +47,7 @@ function Form() {
           setGeocodingError('');
 
           const res = await fetch(
-            `${FORM_BASE_URL}?latitude=${lat}&longitude=${lng}`
+            `${BASE_URL}?latitude=${lat}&longitude=${lng}`
           );
           const data = await res.json();
           console.log(data);
@@ -88,6 +90,7 @@ function Form() {
   }
 
   if (isLoadingGeocoding) return <Spinner />;
+
   if (!lat && !lng)
     return <Message message="Start by clicking somewhere on the map" />;
 
