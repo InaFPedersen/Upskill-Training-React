@@ -7,8 +7,6 @@ import {
   Popup,
   useMap,
   useMapEvents,
-  // useMap,
-  // useMapEvents,
 } from 'react-leaflet';
 import { useEffect, useState } from 'react';
 import { useCities } from '../contexts/CitiesContext';
@@ -43,12 +41,7 @@ function Map() {
   );
 
   return (
-    <div
-      className={styles.mapContainer}
-      // onClick={() => {
-      //   navigate('form');
-      // }}
-    >
+    <div className={styles.mapContainer}>
       {!geolocationPosition && (
         <Button type="position" onClick={getPosition}>
           {isLoadingPosition ? 'Loading' : 'Use your position'}
@@ -70,7 +63,7 @@ function Map() {
             key={city.id}
           >
             <Popup>
-              <span>{/*flagEmojiToPNG(city.emoji)*/ city.emoji}</span>
+              <span>{city.emoji}</span>
               <span>{city.cityName}</span>
             </Popup>
           </Marker>
