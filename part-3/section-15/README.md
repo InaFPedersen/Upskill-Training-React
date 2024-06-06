@@ -57,3 +57,5 @@ In part 3, we will learn:
 - [Redux Toolkit](https://redux-toolkit.js.org/tutorials/overview)
 
 - [React Redux hooks](https://react-redux.js.org/api/hooks)
+
+- [React Leaflet](https://react-leaflet.js.org/)
