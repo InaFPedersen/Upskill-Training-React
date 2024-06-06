@@ -14,6 +14,7 @@ import { useCities } from '../contexts/CitiesContext';
 import { useGeolocation } from '../hooks/useGeolocation';
 import Button from './Button';
 import { useURLPosition } from '../hooks/useURLPosition';
+// import { flagEmojiToPNG } from './flagEmojiToPng';
 
 function Map() {
   const { cities } = useCities();
@@ -64,7 +65,9 @@ function Map() {
             key={city.id}
           >
             <Popup>
-              <span>{city.emoji}</span> <span>{city.cityName}</span>
+              <span>{city.emoji}</span>
+              {/* <span>{flagEmojiToPNG(city.emoji)}</span> */}
+              <span>{city.cityName}</span>
             </Popup>
           </Marker>
         ))}
