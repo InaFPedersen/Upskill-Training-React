@@ -1,0 +1,76 @@
+{
+  "cities": [
+    {
+      "cityName": "Berlin",
+      "country": "Germany",
+      "emoji": "🇩🇪",
+      "date": "2027-02-12T09:24:11.863Z",
+      "notes": "Amazing 😃",
+      "position": {
+        "lat": 52.53586782505711,
+        "lng": 13.376933665713324
+      },
+      "id": "98443197"
+    },
+    {
+      "id": "8527",
+      "cityName": "Aalborg",
+      "country": "Denmark",
+      "emoji": "🇩🇰",
+      "date": "2024-06-05T08:24:37.806Z",
+      "notes": "",
+      "position": {
+        "lat": "57.04039318175088",
+        "lng": "10.050317216761274"
+      }
+    },
+    {
+      "id": "9a6d",
+      "cityName": "Dar es Salaam",
+      "country": "Tanzania, the United Republic of",
+      "emoji": "🇹🇿",
+      "date": "2019-04-10T08:26:21.000Z",
+      "notes": "",
+      "position": {
+        "lat": "-6.845160316688011",
+        "lng": "39.31159426089368"
+      }
+    },
+    {
+      "id": "a719",
+      "cityName": "La Puebla de Valverde",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2024-06-05T09:54:14.748Z",
+      "notes": "",
+      "position": {
+        "lat": "40.27822596773966",
+        "lng": "-1.0010763854633375"
+      }
+    },
+    {
+      "id": "4a32",
+      "cityName": "Arhus",
+      "country": "Denmark",
+      "emoji": "🇩🇰",
+      "date": "2024-06-06T04:44:07.035Z",
+      "notes": "",
+      "position": {
+        "lat": "56.147462052938664",
+        "lng": "10.206298828125002"
+      }
+    },
+    {
+      "id": "5e92",
+      "cityName": "Arnedo",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2024-06-06T05:05:06.894Z",
+      "notes": "",
+      "position": {
+        "lat": "42.17968819665963",
+        "lng": "-2.0874023437500004"
+      }
+    }
+  ]
+}
