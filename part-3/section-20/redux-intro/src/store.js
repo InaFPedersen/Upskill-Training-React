@@ -1,6 +1,7 @@
-// Here we write pure Redux code!!
+import { applyMiddleware, combineReducers, createStore } from 'redux';
+import { thunk } from 'redux-thunk';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
-import { combineReducers, createStore } from 'redux';
 import accountReducer from './features/accounts/accountSlice';
 import customerReducer from './features/customers/customerSlice';
 
@@ -9,6 +10,9 @@ const rootReducer = combineReducers({
   customer: customerReducer,
 });
 
-const store = createStore(rootReducer);
+const store = createStore(
+  rootReducer,
+  composeWithDevTools(applyMiddleware(thunk))
+);
 
 export default store;
