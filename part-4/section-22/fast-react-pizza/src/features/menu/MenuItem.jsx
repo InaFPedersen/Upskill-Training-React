@@ -1,3 +1,6 @@
+import { formatCurrency } from '../../utils/helpers';
+
+// eslint-disable-next-line react/prop-types
 function MenuItem({ pizza }) {
   const { id, name, unitPrice, ingredients, soldOut, imageUrl } = pizza;
 
