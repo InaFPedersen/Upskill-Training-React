@@ -74,12 +74,12 @@ function CreateOrder() {
             // value={withPriority}
             // onChange={(e) => setWithPriority(e.target.checked)}
           />
-          <label htmlFor="priority">Want to yo give your order priority?</label>
+          <label htmlFor="priority">Want to give your order priority?</label>
         </div>
 
         <div>
           <input type="hidden" name="cart" value={JSON.stringify(cart)} />
-          <button disabled={isSubmitting}>
+          <button disabled={isSubmitting} className='bg-sky-400 uppercase font-semibold text-stone-800 py-3 px-4 inline-block tracking-wide rounded-full hover:bg-sky-300 transition-colors duration-300 focus:outline-none focus:ring focus:ring-sky-300 focus:bg-sky-300 focus:ring-offset-2 active:bg-stone-300 disabled:cursor-not-allowed'>
             {isSubmitting ? 'Placing order...' : 'Order now'}
           </button>
         </div>
@@ -107,9 +107,9 @@ export async function action({ request }) {
   if (Object.keys(errors).length > 0) return errors;
 
   // If everything is fine return new order
-  const newOrder = await createOrder(order);
+  // const newOrder = await createOrder(order);
 
-  return redirect(`/order/${newOrder.id}`);
+  // return redirect(`/order/${newOrder.id}`);
 }
 
 export default CreateOrder;
