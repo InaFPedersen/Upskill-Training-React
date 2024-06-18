@@ -8,6 +8,7 @@ import CreateOrder, {
   action as createOrderAction,
 } from './features/order/CreateOrder';
 import Order, { loader as orderLoader } from './features/order/Order';
+import {action as updateOrderAction} from './features/order/UpdateOrder';
 import AppLayout from './ui/AppLayout';
 
 // If you are going to fetch data and etc. this is the method you have to use to create a router
@@ -34,6 +35,7 @@ const router = createBrowserRouter([
         element: <Order />,
         loader: orderLoader,
         errorElement: <Error />,
+        action: updateOrderAction,
       },
     ],
   },
