@@ -12,6 +12,8 @@ module.exports = {
   settings: { react: { version: '18.2' } },
   plugins: ['react-refresh'],
   rules: {
+    'no-unused-vars': 'warn', // Change to 'warn' to reduce severity
+    'react/prop-types': 'off', // Turns off prop-types validation
     'react-refresh/only-export-components': [
       'warn',
       { allowConstantExport: true },
