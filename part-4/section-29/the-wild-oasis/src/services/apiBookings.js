@@ -1,6 +1,7 @@
 import { getToday } from '../utils/helpers';
 import supabase from './supabase';
 
+// Returns one specific booking
 export async function getBooking(id) {
   const { data, error } = await supabase
     .from('bookings')
@@ -16,12 +17,19 @@ export async function getBooking(id) {
   return data;
 }
 
-export async function getBookings() {
-  const { data, error } = await supabase
+// Returns all BOOKINGS
+export async function getBookings({ filter, sortBy }) {
+  let query = supabase
     .from('bookings')
     .select(
       'id, created_at, startDate, endDate, numNights, numGuests, status, totalPrice, cabins(name), guests(fullName, email)'
     );
+
+  //Filter
+  if (filter !== null)
+    query = query[filter.method || 'eq'](filter.field, filter.value);
+
+  const { data, error } = await query;
 
   if (error) {
     console.error(error);
