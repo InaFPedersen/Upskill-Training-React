@@ -10,3 +10,8 @@ Currently, two official plugins are available:
 ## The wild oasis signup/login
 
 Use for example the "temp-mail.org" to create a limited testing email
+
+## Packages used in this project that should be looked more into is
+
+- [Recharts](https://recharts.org/en-US/)
+- [React-error-boundary](https://www.npmjs.com/package/react-error-boundary)
