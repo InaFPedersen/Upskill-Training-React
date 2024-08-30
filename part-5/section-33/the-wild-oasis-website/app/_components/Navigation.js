@@ -25,7 +25,7 @@ export default function Navigation() {
             href="/account"
             className="hover:text-accent-400 transition-colors"
           >
-            Profile
+            Account
           </Link>
         </li>
       </ul>

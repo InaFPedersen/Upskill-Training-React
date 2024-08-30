@@ -1,11 +1,12 @@
 export const metadata = {
-  title: 'Profile',
+  title: 'Account',
 };
 
 export default function Page() {
   return (
     <div>
-      <h1>Profile</h1>;
+      <h1>Account</h1>
+      <p>Welcome, user!</p>
     </div>
   );
 }
