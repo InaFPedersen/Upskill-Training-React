@@ -47,3 +47,5 @@ In part 5, we will learn:
 - [React Server Components](https://react.dev/reference/rsc/server-components)
 
 - [Auth.js documentation](https://authjs.dev/getting-started)
+
+- [MDN documentation](https://developer.mozilla.org/en-US/)
