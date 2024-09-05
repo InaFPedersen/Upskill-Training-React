@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "@heroicons/react": "^2.1.5",
-    "@supabase/supabase-js": "^2.45.3"
-  }
-}
